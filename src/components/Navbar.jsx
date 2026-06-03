@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Clock, Menu, X, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import nfLogo from "../assets/NF_logo.png";
 
 const LondonClock = () => {
   const [time, setTime] = useState("");
@@ -48,9 +49,11 @@ const Navbar = () => {
               aria-label="Home"
               className="w-9 h-9 sm:w-10 sm:h-10 bg-gray-900 rounded-full flex items-center justify-center hover:opacity-85 transition-opacity"
             >
-              <span className="text-white text-[15px] leading-[11px] font-bold tracking-tight">
-                NF
-              </span>
+              <img 
+                src={nfLogo} 
+                alt="NovaForge" 
+                className="w-5 h-5 sm:w-6 sm:h-6 object-contain invert"
+              />
             </Link>
             <div className="hidden md:flex items-center gap-6">
               {navLinks.map((item) => {
