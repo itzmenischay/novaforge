@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .liquid-glass {
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(209, 213, 219, 0.1);
+  }
+  .liquid-glass-strong {
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 40px rgba(0, 0, 0, 0.02);
+  }
+  .text-roll-container {
+    overflow: hidden;
+    display: inline-block;
+    position: relative;
+    height: 20px;
+  }
+  .text-roll-text {
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+  }
+  .text-roll-text::after {
+    content: attr(data-text);
+  }
+  .group:hover .text-roll-text {
+    transform: translateY(-50%);
+  }
+  .icon-rotate {
+    transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+  }
+  .group:hover .icon-rotate {
+    transform: rotate(-45deg);
+  }
+
+  /* code(2).html specific classes */
+  .tonal-surface {
+    background-color: #FFFFFF;
+    box-shadow: 0 4px 40px rgba(0, 0, 0, 0.02);
+    border: 1px solid rgba(209, 213, 219, 0.1);
+  }
+
+  .btn-text-roll {
+    position: relative;
+    overflow: hidden;
+  }
+  .btn-text-roll .roll-text {
+    display: inline-block;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .btn-text-roll::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .btn-text-roll:hover .roll-text {
+    transform: translateY(-100%);
+  }
+  .btn-text-roll:hover::after {
+    transform: translateY(-100%);
+  }
+
+  .nova-input {
+    background-color: #f3f3f3;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+  }
+  .nova-input:focus {
+    background-color: #ffffff;
+    border-color: #a63b00;
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+body {
+  @apply bg-surface text-on-surface font-body-md overflow-x-hidden;
+}
