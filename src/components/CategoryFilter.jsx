@@ -23,11 +23,11 @@ const CategoryFilter = memo(({ categories = ['All', 'Branding', 'Design', 'Devel
                 {isActive && (
                   <motion.div
                     layoutId="activePill"
-                    className="absolute inset-0 bg-gray-900 rounded-full -z-10"
+                    className="absolute inset-0 bg-gray-900 rounded-full"
                     transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                   />
                 )}
-                {category}
+                <span className="relative z-10">{category}</span>
               </button>
             );
           })}
